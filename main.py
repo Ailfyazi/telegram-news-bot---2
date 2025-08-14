@@ -1,1 +1,13 @@
-name: Telegram News Bot ---2on: schedule: - cron: "0 * * * *" # هر ساعت workflow_dispatch: # اجرا دستی jobs: run: runs-on: ubuntu-latest steps: - uses: actions/checkout@v3 - uses: actions/setup-python@v4 with: python-version: "3.10" - run: pip install -r requirements.txt - run: python main.py env: TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }} TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }} 
+import os
+import requests
+
+TOKEN = os.environ['TELEGRAM_TOKEN']
+CHAT_ID = os.environ['TELEGRAM_CHAT_ID']
+
+def send_message(text):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    payload = {"chat_id": CHAT_ID, "text": text}
+    requests.post(url, data=payload)
+
+if __name__ == "__main__":
+    send_message("ربات با موفقیت اجرا شد 🚀")
