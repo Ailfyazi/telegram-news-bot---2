@@ -10,4 +10,4 @@ def send_message(text):
     requests.post(url, data=payload)
 
 if __name__ == "__main__":
-    send_message("ربات با موفقیت اجرا شد 🚀")
+    send_message("ربات با موفقیت اجرا شد 🚀"
