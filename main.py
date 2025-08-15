@@ -1,8 +1,8 @@
 import os
 import requests
 
-TOKEN = os.environ[8425355916:AAGc6-zek0min7lTD4qg4OHly5pdTw15cZI]
-CHAT_ID = os.environ[ @news_iran_daily]
+TOKEN = os.environ [8425355916:AAGc6-zek0min7lTD4qg4OHly5pdTw15cZI]
+CHAT_ID = os.environ[ CHAT_ID = os.environ[ @news_iran_daily]
 
 def send_message(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
